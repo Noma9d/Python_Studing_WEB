@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "python-studing-web"
+version = "0.1.0"
+description = ""
+authors = ["Noma9d"]
+readme = "README.md"
+packages = [{include = "python_studing_web"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+faker = "^19.2.0"
+alembic = "^1.11.1"
+sqlalchemy = "^2.0.19"
+psycopg2-binary = "^2.9.6"
+asyncio = "^3.4.3"
+pymongo = {extras = ["srv", "tls"], version = "^4.4.1"}
+mongoengine = "^0.27.0"
+redis = "^4.6.0"
+redis-lru = "^0.1.2"
+picka = "^1.0.1"
+celery = "^5.3.1"
+pika = "^1.3.2"
+lxml = "^4.9.3"
+beautifulsoup4 = "^4.12.2"
+requests = "^2.31.0"
+scrapy = "^2.10.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
