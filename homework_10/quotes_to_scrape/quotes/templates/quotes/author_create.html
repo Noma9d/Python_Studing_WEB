@@ -1,0 +1,58 @@
+{% extends "quotes/base.html" %}
+
+{% block content %}
+<h1 class="text mb-3"> Adding author</h1>
+<form method="POST" action="{% url 'quotes:author_create' %}">
+    {% csrf_token %} 
+    <div class="row">
+        <div class="col mb-3">
+            <label class="form-label text-light">
+                <strong>Fullname:</strong>
+            </label>
+            <div>{{ form.fullname }}</div>
+            {% if form.errors.name %}
+            <span class="text-warning"><small>{{ form.errors.name }}</small></span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label class="form-label text">
+                <strong>Born date:</strong>
+            </label>
+            <div>{{ form.born_date }}</div>
+            {% if form.errors.name %}
+            <span class="text-warning"><small>{{ form.errors.name }}</small></span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label class="form-label text">
+                <strong>Born location:</strong>
+            </label>
+            <div>{{ form.born_location }}</div>
+            {% if form.errors.name %}
+            <span class="text-warning"><small>{{ form.errors.name }}</small></span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label class="form-label text">
+                <strong>Description:</strong>
+            </label>
+            <div>{{ form.description }}</div>
+            {% if form.errors.name %}
+            <span class="text-warning"><small>{{ form.errors.name }}</small></span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

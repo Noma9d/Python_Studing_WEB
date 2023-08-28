@@ -65,3 +65,24 @@
 .disabled {
     color: #333333;
 }
+
+.header-box {
+    padding-bottom: 40px;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.author-details {
+    width: 80%;
+}
+
+.author-description {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+

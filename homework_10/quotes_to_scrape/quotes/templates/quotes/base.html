@@ -22,6 +22,14 @@
           </h1>
         </div>
         <div class="col-md-4">
+          {% if user.is_authenticated %}
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+              <li><a class="btn nav-link px-2 link-dark" href="{% url 'quotes:quote' %}">Add new quote</a></li>
+              <li><a class="btn nav-link px-2 link-dark" href="{% url 'quotes:author_create' %}">Add new author</a></li>
+          </ul>
+          {% endif %}
+        </div>
+        <div class="col-md-4">
           <p>
             <a href="{% url 'users:register' %}" class="btn btn-primary">SignUp</a>
             <a href="{% url 'users:login' %}" class="btn btn-primary">Login</a>

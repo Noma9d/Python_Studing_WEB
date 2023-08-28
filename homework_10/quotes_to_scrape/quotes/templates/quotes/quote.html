@@ -1,0 +1,45 @@
+{% extends "quotes/base.html" %}
+
+{% block content %}
+<h1 class="text mb-3"> Adding quote</h1>
+<form method="POST" action="{% url 'quotes:quote' %}">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col mb-3">
+            <label class="form-label text">
+                <strong>Quote:</strong>
+            </label>
+            <div>{{ form.quote }}</div>
+            {% if form.errors.name %}
+            <span class="text-warning"><small>{{ form.errors.name }}</small></span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label text"><strong>Quote author:</strong></label>
+            <select name="author" class="form-select">
+                {% for author in all_authors %}
+                <option value="{{author.id}}">{{author.fullname}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label text"><strong>Select tags:</strong></label>
+            <select name="tags" class="form-select" size="5">
+                {% for tag in tags %}
+                <option value="{{tag.name}}">{{tag.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
