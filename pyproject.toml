@@ -25,6 +25,10 @@ beautifulsoup4 = "^4.12.2"
 requests = "^2.31.0"
 scrapy = "^2.10.0"
 django = "^4.2.4"
+fastapi = "^0.103.1"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+pydantic = "^2.3.0"
+python-multipart = "^0.0.6"
 
 
 [build-system]
