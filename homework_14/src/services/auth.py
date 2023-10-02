@@ -143,7 +143,7 @@ class Auth:
             )
 
     async def get_current_user(
-        self, token: str = Depends(oauth2_schemas), db: Session = Depends(get_db)
+        self, token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)
     ):
         """
         Получает текущего аутентифицированного пользователя на основе токена доступа.

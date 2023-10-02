@@ -18,6 +18,7 @@ async def read_root():
     Root route handler.
     Returns:
         dict: JSON object with message.
+
     """
     return {"Message": "This is a root of project"}
 
@@ -38,9 +39,7 @@ app.add_middleware(
 async def startup():
     """
     A function executed when the application starts.
-
     Initializes FastAPILimiter using Redis.
-
     Raises:
         Exception: If unable to connect to Redis.
     """
